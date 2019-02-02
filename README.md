@@ -6,3 +6,6 @@ Just run program under JVM, enter your data, select your favorite encryption alg
 
 ## Add your own algorithm
 Each algorithm that used in this program should extends `CryptoAlgorithm` class and added to `CryptoConstants` class.
+
+## Use as Library
+If you want to use this project as a library, then you can import `crypto.CryptoTools`. There is many methods inside `crypto.CryptoTools` that you can call them from another programmes.

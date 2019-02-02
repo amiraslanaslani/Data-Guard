@@ -1,14 +1,14 @@
-
-package datakeeper;
+package dataguard;
 
 /**
  *
  * @author Amir Aslan Aslani
  */
-public class DataKeeper {
+public class DataGuard {
 
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
     public static void main(String[] args) throws Exception {
         

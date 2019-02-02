@@ -1,12 +1,10 @@
-package datakeeper;
+package dataguard;
 
 import crypto.CryptoConstants;
-import crypto.CryptoAlgorithm;
+import crypto.CryptoTools;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -104,7 +102,7 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aslan Cipher Center :)");
+        setTitle("Aslan's Cipher Center :)");
         setMinimumSize(new java.awt.Dimension(738, 218));
 
         Menu.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
@@ -291,7 +289,7 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        getAccessibleContext().setAccessibleDescription("Aslan Cipher Center :)");
+        getAccessibleContext().setAccessibleDescription("Aslan's Cipher Center :)");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -338,11 +336,7 @@ public class MainFrame extends javax.swing.JFrame {
                 oos.close();
                 os.close();
 
-                CryptoAlgorithm ca = CryptoConstants.getCryptoAlgorithmInstanceByID(algorithm.getSelectedIndex(), key);
-                byte[] encryptedBytes = ca.encrypt(hashMapBytes);
-
-                FileOutputStream fos = new FileOutputStream(fileName);
-                fos.write(encryptedBytes);
+                CryptoTools.encryptBytesAndSaveFile(algorithm.getSelectedIndex(), key, new File(fileName), hashMapBytes);
             }
             catch(IOException e){
                 e.printStackTrace();
@@ -360,18 +354,13 @@ public class MainFrame extends javax.swing.JFrame {
         if(key.length() > 0 & fileName.length() > 0){
             try{
                 File f = new File(fileName);
-                FileInputStream fis = new FileInputStream(fileName);
-                byte[] fileBytes = new byte[(int) f.length()];
-                fis.read(fileBytes);
-                fis.close();
-
-                CryptoAlgorithm ca = CryptoConstants.getCryptoAlgorithmInstanceByID(algorithm.getSelectedIndex(), key);
-                byte[] hashMapBytes = ca.decrypt(fileBytes);
-
+                
+                byte[] hashMapBytes = CryptoTools.readFileAndDecrypt(algorithm.getSelectedIndex(), key, f);
+                
                 ByteArrayInputStream bais = new ByteArrayInputStream(hashMapBytes);
                 ObjectInputStream ois = new ObjectInputStream(bais);
 
-                currentFile = (HashMap < String, String >) ois.readObject();
+                currentFile = (HashMap <String, String>) ois.readObject();
 
                 ois.close();
                 bais.close();

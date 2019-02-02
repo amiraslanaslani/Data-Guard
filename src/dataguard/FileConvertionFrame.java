@@ -1,11 +1,9 @@
-package datakeeper;
+package dataguard;
 
-import crypto.CryptoAlgorithm;
 import crypto.CryptoConstants;
+import crypto.CryptoTools;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import javax.swing.ComboBoxModel;
 import javax.swing.DefaultComboBoxModel;
@@ -223,31 +221,11 @@ public class FileConvertionFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_doActionActionPerformed
 
     private void doEncrypt(String key) throws FileNotFoundException, IOException, Exception{
-        FileInputStream fis = new FileInputStream(sourceFile);
-        byte[] fileBytes = new byte[(int) sourceFile.length()];
-        fis.read(fileBytes);
-        fis.close();
-        
-        CryptoAlgorithm ca = CryptoConstants.getCryptoAlgorithmInstanceByID(algorithm.getSelectedIndex(), key);
-        byte[] encrypted = ca.encrypt(fileBytes);
-        
-        FileOutputStream fos = new FileOutputStream(destinationFile);
-        fos.write(encrypted);
-        fos.close();
+        CryptoTools.fileEncrypt(algorithm.getSelectedIndex(), key, sourceFile, destinationFile);
     }
     
     private void doDecrypt(String key) throws FileNotFoundException, IOException, Exception{
-        FileInputStream fis = new FileInputStream(sourceFile);
-        byte[] fileBytes = new byte[(int) sourceFile.length()];
-        fis.read(fileBytes);
-        fis.close();
-        
-        CryptoAlgorithm ca = CryptoConstants.getCryptoAlgorithmInstanceByID(algorithm.getSelectedIndex(), key);
-        byte[] decrypted = ca.decrypt(fileBytes);
-        
-        FileOutputStream fos = new FileOutputStream(destinationFile);
-        fos.write(decrypted);
-        fos.close();
+        CryptoTools.fileDecrypt(algorithm.getSelectedIndex(), key, sourceFile, destinationFile);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
