@@ -100,6 +100,7 @@ public class MainFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         openFileConvertionToolButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        openFolderConvertionToolButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aslan's Cipher Center :)");
@@ -237,6 +238,14 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("V 0.0.1 - @AmirAslanAslani  :)");
 
+        openFolderConvertionToolButton.setText("Open Folder Convertion Tool");
+        openFolderConvertionToolButton.setActionCommand("Open Folder Convertion Tool");
+        openFolderConvertionToolButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openFolderConvertionToolButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -245,7 +254,8 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(openFileConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(openFolderConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -253,7 +263,9 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(openFileConvertionToolButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 274, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(openFolderConvertionToolButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
@@ -391,6 +403,11 @@ public class MainFrame extends javax.swing.JFrame {
         fcf.setVisible(true);
     }//GEN-LAST:event_openFileConvertionToolButtonActionPerformed
 
+    private void openFolderConvertionToolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFolderConvertionToolButtonActionPerformed
+        FolderConvertionFrame fcf = new FolderConvertionFrame();
+        fcf.setVisible(true);
+    }//GEN-LAST:event_openFolderConvertionToolButtonActionPerformed
+
     
     JFileChooser fc = new JFileChooser();
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -414,6 +431,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JButton load;
     private javax.swing.JTextField newSectionName;
     private javax.swing.JButton openFileConvertionToolButton;
+    private javax.swing.JButton openFolderConvertionToolButton;
     private javax.swing.JButton remove;
     private javax.swing.JButton save;
     // End of variables declaration//GEN-END:variables
