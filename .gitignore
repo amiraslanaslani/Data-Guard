@@ -6,5 +6,9 @@ dist/
 nbdist/
 .nb-gradle/
 
+# Idea
+.idea
+out
+
 # Personal
 .directory
