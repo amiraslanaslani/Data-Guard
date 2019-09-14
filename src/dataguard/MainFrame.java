@@ -104,7 +104,7 @@ public class MainFrame extends javax.swing.JFrame {
         openBatchFileConvertionToolButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Aslan's Cipher Center :)");
+        setTitle("Data Guard");
         setMinimumSize(new java.awt.Dimension(738, 218));
 
         Menu.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
