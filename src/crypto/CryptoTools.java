@@ -22,9 +22,47 @@ public class CryptoTools {
         return fileBytes;
     }
     
-    private static void saveBytesInFile(File file,byte[] bytes) throws Exception{
+    private static void saveBytesInFile(File file, byte[] bytes) throws Exception{
         FileOutputStream fos = new FileOutputStream(file);
         fos.write(bytes);
+        fos.close();
+    }
+
+    public static void encryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize) throws Exception{
+        batchSize *= 64;
+        batchSize --;
+
+        FileInputStream fis = new FileInputStream(originFile);
+        FileOutputStream fos = new FileOutputStream(destinationFile);
+
+        while(fis.available() > 0) {
+            int bSize = Math.min(batchSize, fis.available());
+            byte[] fileBytes = new byte[bSize];
+            fis.read(fileBytes);
+            byte[] encrypted = getByteArrayEncrypt(Algorithm, key, fileBytes);
+
+            // Write bytes to file
+            fos.write(encrypted);
+        }
+
+        fos.close();
+    }
+
+    public static void decryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize) throws Exception{
+        batchSize *= 64;
+        FileInputStream fis = new FileInputStream(originFile);
+        FileOutputStream fos = new FileOutputStream(destinationFile);
+
+        while(fis.available() > 0) {
+            int bSize = Math.min(batchSize, fis.available());
+            byte[] fileBytes = new byte[bSize];
+            fis.read(fileBytes);
+            byte[] encrypted = getByteArrayDecrypt(Algorithm, key, fileBytes);
+
+            // Write bytes to file
+            fos.write(encrypted);
+        }
+
         fos.close();
     }
     
