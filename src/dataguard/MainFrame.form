@@ -318,7 +318,7 @@
           <SubComponents>
             <Component class="javax.swing.JButton" name="openFileConvertionToolButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="File Convertion Tool"/>
+                <Property name="text" type="java.lang.String" value="File Converting Tool"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openFileConvertionToolButtonActionPerformed"/>
@@ -332,7 +332,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="openFolderConvertionToolButton">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Folder Convertion Tool"/>
+                <Property name="text" type="java.lang.String" value="Folder Converting Tool"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openFolderConvertionToolButtonActionPerformed"/>
@@ -340,7 +340,7 @@
             </Component>
             <Component class="javax.swing.JButton" name="openBatchFileConvertionToolButton1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Batch File Convertion Tool"/>
+                <Property name="text" type="java.lang.String" value="Batch File Converting Tool"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="openBatchFileConvertionToolButton1ActionPerformed"/>

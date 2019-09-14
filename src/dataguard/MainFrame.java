@@ -229,7 +229,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Main", jPanel3);
 
-        openFileConvertionToolButton.setText("File Convertion Tool");
+        openFileConvertionToolButton.setText("File Converting Tool");
         openFileConvertionToolButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFileConvertionToolButtonActionPerformed(evt);
@@ -239,14 +239,14 @@ public class MainFrame extends javax.swing.JFrame {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("V 0.0.2 - @AmirAslanAslani  :)");
 
-        openFolderConvertionToolButton.setText("Folder Convertion Tool");
+        openFolderConvertionToolButton.setText("Folder Converting Tool");
         openFolderConvertionToolButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFolderConvertionToolButtonActionPerformed(evt);
             }
         });
 
-        openBatchFileConvertionToolButton1.setText("Batch File Convertion Tool");
+        openBatchFileConvertionToolButton1.setText("Batch File Converting Tool");
         openBatchFileConvertionToolButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openBatchFileConvertionToolButton1ActionPerformed(evt);
@@ -409,17 +409,17 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_fileSelectActionPerformed
 
     private void openFileConvertionToolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFileConvertionToolButtonActionPerformed
-        FileConvertionFrame fcf = new FileConvertionFrame();
+        FileConvertingFrame fcf = new FileConvertingFrame();
         fcf.setVisible(true);
     }//GEN-LAST:event_openFileConvertionToolButtonActionPerformed
 
     private void openFolderConvertionToolButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openFolderConvertionToolButtonActionPerformed
-        FolderConvertionFrame fcf = new FolderConvertionFrame();
+        FolderConvertingFrame fcf = new FolderConvertingFrame();
         fcf.setVisible(true);
     }//GEN-LAST:event_openFolderConvertionToolButtonActionPerformed
 
     private void openBatchFileConvertionToolButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openBatchFileConvertionToolButton1ActionPerformed
-        BatchFileConvertionFrame bfc = new BatchFileConvertionFrame();
+        BatchFileConvertingFrame bfc = new BatchFileConvertingFrame();
         bfc.setVisible(true);
     }//GEN-LAST:event_openBatchFileConvertionToolButton1ActionPerformed
 

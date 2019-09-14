@@ -10,7 +10,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="2"/>
-    <Property name="title" type="java.lang.String" value="Aslan File Convertion Tool :o"/>
+    <Property name="title" type="java.lang.String" value="Aslan Batch File Converting Tool :o"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[2147483647, 250]"/>
     </Property>

@@ -18,12 +18,12 @@ import javax.swing.JOptionPane;
  *
  * @author Amir Aslan Aslani
  */
-public class FolderConvertionFrame extends javax.swing.JFrame {
+public class FolderConvertingFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form FileConvertionFrame
      */
-    public FolderConvertionFrame() {
+    public FolderConvertingFrame() {
         initComponents();
         
         ComboBoxModel<String> cbm = new DefaultComboBoxModel<>(CryptoConstants.CRYPTO);

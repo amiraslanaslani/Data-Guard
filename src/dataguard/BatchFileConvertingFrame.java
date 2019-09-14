@@ -14,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author Amir Aslan Aslani
  */
-public class BatchFileConvertionFrame extends javax.swing.JFrame {
+public class BatchFileConvertingFrame extends javax.swing.JFrame {
 
     /**
      * Creates new form FileConvertionFrame
      */
-    public BatchFileConvertionFrame() {
+    public BatchFileConvertingFrame() {
         initComponents();
         
         ComboBoxModel<String> cbm = new DefaultComboBoxModel<>(CryptoConstants.CRYPTO);
@@ -54,7 +54,7 @@ public class BatchFileConvertionFrame extends javax.swing.JFrame {
         jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Aslan File Convertion Tool :o");
+        setTitle("Aslan Batch File Converting Tool :o");
         setMaximumSize(new java.awt.Dimension(2147483647, 250));
         setMinimumSize(new java.awt.Dimension(504, 230));
         setResizable(false);
