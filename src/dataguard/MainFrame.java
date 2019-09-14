@@ -101,6 +101,7 @@ public class MainFrame extends javax.swing.JFrame {
         openFileConvertionToolButton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         openFolderConvertionToolButton = new javax.swing.JButton();
+        openBatchFileConvertionToolButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aslan's Cipher Center :)");
@@ -228,7 +229,7 @@ public class MainFrame extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Main", jPanel3);
 
-        openFileConvertionToolButton.setText("Open File Convertion Tool");
+        openFileConvertionToolButton.setText("File Convertion Tool");
         openFileConvertionToolButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFileConvertionToolButtonActionPerformed(evt);
@@ -236,13 +237,19 @@ public class MainFrame extends javax.swing.JFrame {
         });
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("V 0.0.1 - @AmirAslanAslani  :)");
+        jLabel3.setText("V 0.0.2 - @AmirAslanAslani  :)");
 
-        openFolderConvertionToolButton.setText("Open Folder Convertion Tool");
-        openFolderConvertionToolButton.setActionCommand("Open Folder Convertion Tool");
+        openFolderConvertionToolButton.setText("Folder Convertion Tool");
         openFolderConvertionToolButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 openFolderConvertionToolButtonActionPerformed(evt);
+            }
+        });
+
+        openBatchFileConvertionToolButton1.setText("Batch File Convertion Tool");
+        openBatchFileConvertionToolButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                openBatchFileConvertionToolButton1ActionPerformed(evt);
             }
         });
 
@@ -253,9 +260,10 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(openFileConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                    .addComponent(openFileConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(openFolderConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE))
+                    .addComponent(openFolderConvertionToolButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(openBatchFileConvertionToolButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -265,7 +273,9 @@ public class MainFrame extends javax.swing.JFrame {
                 .addComponent(openFileConvertionToolButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(openFolderConvertionToolButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 237, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(openBatchFileConvertionToolButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 206, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addContainerGap())
         );
@@ -408,6 +418,11 @@ public class MainFrame extends javax.swing.JFrame {
         fcf.setVisible(true);
     }//GEN-LAST:event_openFolderConvertionToolButtonActionPerformed
 
+    private void openBatchFileConvertionToolButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openBatchFileConvertionToolButton1ActionPerformed
+        BatchFileConvertionFrame bfc = new BatchFileConvertionFrame();
+        bfc.setVisible(true);
+    }//GEN-LAST:event_openBatchFileConvertionToolButton1ActionPerformed
+
     
     JFileChooser fc = new JFileChooser();
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -430,6 +445,7 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JButton load;
     private javax.swing.JTextField newSectionName;
+    private javax.swing.JButton openBatchFileConvertionToolButton1;
     private javax.swing.JButton openFileConvertionToolButton;
     private javax.swing.JButton openFolderConvertionToolButton;
     private javax.swing.JButton remove;
