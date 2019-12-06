@@ -271,7 +271,7 @@ public class BatchFileConvertingFrame extends javax.swing.JFrame {
         String newStr = "";
         for(int i = 0;i < str.length();i ++){
             char c = str.charAt(i);
-            if(c < '9' && c > '0'){
+            if(c <= '9' && c >= '0'){
                 newStr += c;
             }
         }

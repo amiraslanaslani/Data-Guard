@@ -32,7 +32,7 @@ public class MainFrame extends javax.swing.JFrame {
         initComponents();
         
         // Set JFrame Icon
-        ImageIcon img = new ImageIcon("src/icon.png");
+        ImageIcon img = new ImageIcon("./icon.png");
         this.setIconImage(img.getImage());
         
         // Set Combo Box Model

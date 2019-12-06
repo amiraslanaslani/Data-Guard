@@ -29,38 +29,60 @@ public class CryptoTools {
     }
 
     public static void encryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize) throws Exception{
-        batchSize *= 64;
-        batchSize --;
-
-        FileInputStream fis = new FileInputStream(originFile);
-        FileOutputStream fos = new FileOutputStream(destinationFile);
-
-        while(fis.available() > 0) {
-            int bSize = Math.min(batchSize, fis.available());
-            byte[] fileBytes = new byte[bSize];
-            fis.read(fileBytes);
-            byte[] encrypted = getByteArrayEncrypt(Algorithm, key, fileBytes);
-
-            // Write bytes to file
-            fos.write(encrypted);
-        }
-
-        fos.close();
+        encryptBatchFile(Algorithm, key, originFile, destinationFile, batchSize,new Runnable() {
+            @Override
+            public void run(int percent) {
+                
+            }
+        });
+    }
+    
+    public static void encryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize, Runnable runnable) throws Exception{
+        encOrDecBatchFiles(true, Algorithm, key, originFile, destinationFile, batchSize, runnable);
+    }
+    
+    public static void decryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize) throws Exception {
+        decryptBatchFile(Algorithm, key, originFile, destinationFile, batchSize, new Runnable() {
+            @Override
+            public void run(int percent) {
+                
+            }
+        });
     }
 
-    public static void decryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize) throws Exception{
+    public static void decryptBatchFile(int Algorithm, String key, File originFile, File destinationFile, int batchSize, Runnable runnable) throws Exception{
+        encOrDecBatchFiles(false, Algorithm, key, originFile, destinationFile, batchSize, runnable);
+    }
+    
+    private static void encOrDecBatchFiles(boolean enc, int Algorithm, String key, File originFile, File destinationFile, int batchSize, Runnable runnable) throws Exception{
         batchSize *= 64;
+        
+        if(! enc)
+            batchSize += 16;
+        
         FileInputStream fis = new FileInputStream(originFile);
         FileOutputStream fos = new FileOutputStream(destinationFile);
-
+        long passedBytes = 0;
+        
+        int allBytes = fis.available();
+        
         while(fis.available() > 0) {
+            runnable.run((int) (passedBytes * 100 / originFile.length()));
+            
             int bSize = Math.min(batchSize, fis.available());
             byte[] fileBytes = new byte[bSize];
             fis.read(fileBytes);
-            byte[] encrypted = getByteArrayDecrypt(Algorithm, key, fileBytes);
+            passedBytes += fileBytes.length;
+            
+            byte[] encOrDec;
+            if(enc)
+                encOrDec = getByteArrayEncrypt(Algorithm, key, fileBytes);
+            else
+                encOrDec = getByteArrayDecrypt(Algorithm, key, fileBytes);
 
             // Write bytes to file
-            fos.write(encrypted);
+            fos.write(encOrDec);
+            fos.flush();
         }
 
         fos.close();
